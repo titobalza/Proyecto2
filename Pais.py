@@ -10,6 +10,6 @@ class Pais:
         self.clima = clima
         
     def mostrar_info(self):
-        print(f'---------- INFORMACION DE {self.nombre.upper()}---------\n\nCapital: {self.capital}\nPoblacion: {self.poblacion}\nArea: {self.area}\nMoneda: {self.moneda}\nIdioma: {self.idioma}')
+        print(f'\n---------- INFORMACION DE {self.nombre.upper()}---------\n\nCapital: {self.capital}\nPoblacion: {self.poblacion}\nArea: {self.area}\nMoneda: {self.moneda}\nIdioma: {self.idioma}')
         
     

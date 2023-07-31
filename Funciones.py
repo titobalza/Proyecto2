@@ -46,4 +46,3 @@ def api_paises(estados, climas):
 def mostrar_paises(paises):
     for i, pais in enumerate(paises):
         print(i+1, pais.nombre)
-        
