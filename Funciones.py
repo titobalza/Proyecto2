@@ -44,5 +44,6 @@ def api_paises(estados, climas):
     return paises
 
 def mostrar_paises(paises):
+    print('Lista de paises en el sistema')
     for i, pais in enumerate(paises):
-        print(i+1, pais.nombre)
+        print(i+1, pais.nombre) 

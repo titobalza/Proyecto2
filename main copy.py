@@ -1,14 +1,13 @@
 from Funciones import * 
 def menu():
-    print('\nBienvenido al sistema de datos meteorologicos!\n')
     while True:
         try:
             print('\n-----------------------------------')
             print("Por favor, seleccione un módulo:")
             print("1. Módulo de información")
-            print("2. Módulo de análisis de datos")
-            print("3. Módulo de filtrado de datos")
-            print("4. Módulo de busqueda y consulta de datos")
+            print("2. Mostrar información para un país")
+            print("3. Mostrar estados de un país")
+            print("4. Mostrar datos meteorológicos de un país")
             print("5. Salir")
             opcion = int(input("\nIngrese el número de la opción que desea: "))
             if opcion not in range(1,6):
@@ -30,8 +29,7 @@ def main():
                         print("2. Mostrar información para un país")
                         print("3. Mostrar estados de un país")
                         print("4. Mostrar datos meteorológicos de un país")
-                        print("5. Volver")
-                        opc=int(input('\nSeleccione una opción: '))
+                        opc=int(input('\n Seleccione una opción'))
                         estados=api_estado()
                         climas=api_climas()
                         paises=api_paises(estados,climas)
@@ -40,12 +38,12 @@ def main():
                         if opc == 1:
                             mostrar_paises(paises)
                             
-                        elif opc == 2:
+                        if opc == 2:
                             opc= ''
                             while True:
                                 try:
                                     mostrar_paises(paises)
-                                    opc=int(input("\nIntroduzca el número del país que quiera seleccionar: "))
+                                    opc=int(input("introduzca el número del país que quiera seleccionar"))
                                     if opc == 1:
                                         opc="Argentina"
                                     elif opc == 2:
@@ -76,12 +74,12 @@ def main():
                             for pais in paises:
                                 if pais.nombre == opc:
                                     pais.mostrar_info()
-                        elif opc == 3:
+                        if opc == 3:
                             opc= ''
                             while True:
                                 try:
                                     mostrar_paises(paises)
-                                    opc=int(input("introduzca el número del país que quiera seleccionar "))
+                                    opc=int(input("introduzca el número del país que quiera seleccionar"))
                                     if opc == 1:
                                         opc="Argentina"
                                     elif opc == 2:
@@ -108,18 +106,16 @@ def main():
                                     
                                     break
                                 except:
-                                    print('\nPor favor ingrese únicamente números enteros entre 1 y 10\n')
-                            print(f'\n--------INFORMACIÓN DE LOS ESTADOS DE {opc.upper()}--------')
+                                    print('Por favor ingrese únicamente números enteros entre 1 y 10')
                             for estado in estados:
                                 if estado.nombre_pais == opc:
-                                    
                                     estado.mostrar_info_estado()
-                        elif opc == 4:
+                        if opc == 4:
                             opc= ''
                             while True:
                                 try:
                                     mostrar_paises(paises)
-                                    opc=int(input("\nIntroduzca el número del país que quiera seleccionar: "))
+                                    opc=int(input("introduzca el número del país que quiera seleccionar"))
                                     if opc == 1:
                                         opc="Argentina"
                                     elif opc == 2:
@@ -146,21 +142,30 @@ def main():
                                     
                                     break
                                 except:
-                                    print('\nPor favor ingrese únicamente números enteros entre 1 y 10: ')
-                            print(f'\n--------INFORMACIÓN CLIMÁTICA PARA {opc.upper()}--------')
+                                    print('Por favor ingrese únicamente números enteros entre 1 y 10')
                             for clima in climas:
                                 if clima.nombre_pais== opc:
                                     clima.mostrar_info_clima()
-                        elif opc == 5:
-                            break
                         else:
                             raise Exception
-                        
+                        break
                 except:
-                    print('\nPor favor seleccione un número entero entre 1 y 5')
+                    print('Por favor seleccione un número entero entre 1 y 4')
                     
-        elif opcion == 5:
-            print('\nHasta pronto!\n\n')
+        if opcion == 5:
             break
-                
+            
+    '''estados = api_estado()
+    climas = api_climas() 
+    
+    paises = api_paises(estados,climas)
+    
+    for pais in paises:
+        if pais.nombre == 'Venezuela':
+            pais.mostrar_info()
+            
+    mostrar_paises(paises)'''
+    
+    
+    
 main()
