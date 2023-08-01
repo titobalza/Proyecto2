@@ -7,4 +7,4 @@ class Estado:
         self.area = area
         
     def mostrar_info_estado(self):
-        print(f'\nEstado: {self.nombre}\nCapital del estado: {self.capital}\nPoblación del estado: {self.poblacion}\nArea: {self.area}')
+        print(f'\nEstado: {self.nombre}\nCapital del estado: {self.capital}\nPoblación del estado: {self.poblacion} habitantes \nArea: {self.area} km²')
